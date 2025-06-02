@@ -1,6 +1,26 @@
 function [f_x]=f_x(k,a,b)
+% Computes the function f_x corresponding to Equation (A18) in
+% Yang Zhang's "Magnetic Double Helix" paper.
+%
+% This function evaluates a series expression involving integrals of
+% Bessel functions (I_n and K_n) and trigonometric terms, which arise
+% in the analytic model for the magnetic field structure of braided flux ropes.
+%
+% Inputs:
+%   k - dimensionless wavenumber parameter (e.g., k = r0 / λ)
+%   a - major radius of the braid envelope
+%   b - minor radius of the braid filament
+%
+% Output:
+%   f_x - numerical evaluation of the analytical function defined in Eq. (A18)
+%
+% The series is computed term-by-term up to a maximum n, with convergence
+% checked against a relative error threshold. If the integral evaluation
+% encounters numerical instability at large n, an asymptotic expansion
+% of the Bessel functions is used to ensure accurate evaluation.
+
 % To avoid division by zero when k is zero, add a small epsilon.
-epsilon=1e-6
+epsilon=1e-6;
 if k==0
     k=k+epsilon;
 end
