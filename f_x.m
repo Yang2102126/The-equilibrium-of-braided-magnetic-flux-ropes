@@ -7,7 +7,7 @@ function [f_x]=f_x(k,a,b)
 % in the analytic model for the magnetic field structure of braided flux ropes.
 %
 % Inputs:
-%   k - dimensionless wavenumber parameter (e.g., k = r0 / λ)
+%   k - axial wavenumber parameter (e.g., k = 2*pi / λ)
 %   a - major radius of the braid envelope
 %   b - minor radius of the braid filament
 %
